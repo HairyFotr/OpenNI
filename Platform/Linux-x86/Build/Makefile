@@ -94,9 +94,13 @@ JAVA_SAMPLES = \
 	Samples/SimpleViewer.java \
 	Samples/UserTracker.java \
 
+SCALA_SAMPLES = \
+	Samples/UserTracker.scala \
+
 ALL_SAMPLES = \
 	$(CORE_SAMPLES) \
-	$(JAVA_SAMPLES)
+	$(JAVA_SAMPLES) \
+	$(SCALA_SAMPLES)
 
 # list all projects that are build
 ALL_BUILD_PROJS = \
@@ -168,6 +172,7 @@ Samples/UserTracker.net: Wrappers/OpenNI.net
 Samples/SimpleRead.java: Wrappers/OpenNI.java
 Samples/SimpleViewer.java: Wrappers/OpenNI.java
 Samples/UserTracker.java: Wrappers/OpenNI.java
+Samples/UserTracker.scala: Wrappers/OpenNI.java
 
 # clean is cleaning all projects
 clean: $(ALL_PROJS_CLEAN)

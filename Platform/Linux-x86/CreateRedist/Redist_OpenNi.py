@@ -94,7 +94,7 @@ def fix_file(arg,dirname,fname):
         if os.path.isdir(filePath):
             continue
 
-        ext = ['cpp','h','ini','cs','java']
+        ext = ['cpp','h','ini','cs','java','scala']
         if filename == "Makefile" or filename.partition(".")[2] in ext:
             #print "Fixing: " + filePath
             tempName=filePath+'~~~'
@@ -110,6 +110,7 @@ def fix_file(arg,dirname,fname):
                 s = re.sub(r"include ../../Common/CommonCppMakefile",r"LIB_DIRS += ../../Lib\ninclude ../Build/Common/CommonCppMakefile",s)
                 s = re.sub(r"include ../../Common/CommonCSMakefile",r"LIB_DIRS += ../../Lib\ninclude ../Build/Common/CommonCSMakefile",s)
                 s = re.sub(r"include ../../Common/CommonJavaMakefile",r"LIB_DIRS += ../../Lib\ninclude ../Build/Common/CommonJavaMakefile",s)
+                s = re.sub(r"include ../../Common/CommonScalaMakefile",r"LIB_DIRS += ../../Lib\ninclude ../Build/Common/CommonScalaMakefile",s)
 
                 output.write(s)
                 
